@@ -353,7 +353,7 @@ namespace ChatBubbles
             
             for (ulong j = 0; j < logBubble->BalloonQueue.MySize; j++)
             {
-                var balloonInfo = logBubble->BalloonQueue.Get(j);
+                var balloonInfo = logBubble->BalloonQueue[(long)j];
                 slots[balloonInfo.Slot].ID = balloonInfo.BalloonId;
                 slots[balloonInfo.Slot].Active = true;
             }
@@ -404,7 +404,7 @@ namespace ChatBubbles
             {
                 for (ulong j = 0; j < logBubble->BalloonQueue.MySize; j++)
                 {
-                    var balloonInfo = logBubble->BalloonQueue.Get(j);
+                    var balloonInfo = logBubble->BalloonQueue[(long)j];
 
                     _slots[9 - j].ID = balloonInfo.BalloonId - 1;
                     _slots[9 - j].Active = true;
